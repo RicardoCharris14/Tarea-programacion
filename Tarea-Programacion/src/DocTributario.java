@@ -3,14 +3,18 @@ public abstract class DocTributario {
     private  String numero;
     private String rut;
     private Date fecha;
+    private Direccion ref1Direccion;
+
 
     //--------constructor-----------
-    public DocTributario(String numero, String rut, Date fecha) {
+    public DocTributario(String numero, String rut,Direccion ref1Direccion, Date fecha) {
         this.numero = numero;
         this.rut = rut;
         this.fecha = fecha;
+        this.ref1Direccion = ref1Direccion;
     }
 
+    //----------getters and setters---------
     public String getNumero() {
         return numero;
     }
@@ -33,6 +37,14 @@ public abstract class DocTributario {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public Direccion getRef1Direccion() {
+        return ref1Direccion;
+    }
+
+    public void setRef1Direccion(Direccion ref1Direccion) {
+        this.ref1Direccion = ref1Direccion;
     }
 
 }

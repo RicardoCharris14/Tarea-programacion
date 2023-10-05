@@ -1,8 +1,9 @@
 import java.util.Date;
 public class Factura extends DocTributario {
 
-    public Factura(String numero, String rut, Date fecha) {
-        super(numero, rut, fecha);
+    //---------constructor----------
+    public Factura(String numero, String rut, Direccion ref1Direccion, Date fecha) {
+        super(numero, rut, ref1Direccion, fecha);
     }
 
 

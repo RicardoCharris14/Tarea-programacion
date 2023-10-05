@@ -1,15 +1,26 @@
 public class Cliente {
     private String nombre;
     private String rut;
-    private Direccion direccion;
+    private Direccion refDireccion;
+    private OrdenCompra orden;
+
+
 
 
     //-----------------metodo constructor----------------
-    public Cliente(String nombre, String rut, Direccion direccion) {
+    public Cliente(String nombre, String rut, Direccion refDireccion, OrdenCompra orden) {
         this.nombre = nombre;
         this.rut = rut;
-        this.direccion = direccion;
+        this.refDireccion = refDireccion;
+        this.orden = orden;
     }
+    public Cliente(String nombre, String rut){
+        this.nombre = nombre;
+        this.rut = rut;
+    }
+
+
+
 
     // -------------getters and setters------------
     public String getNombre() {
@@ -22,6 +33,7 @@ public class Cliente {
 
     public String getRut() {
         return rut;
+
     }
 
     public void setRut(String rut) {
@@ -29,11 +41,19 @@ public class Cliente {
     }
 
     public Direccion getDireccion() {
-        return direccion;
+        return refDireccion;
     }
 
-    public void setDireccion(Direccion direccion) {
-        this.direccion = direccion;
+    public void setRefDireccion(Direccion refDireccion) {
+        this.refDireccion = refDireccion;
+    }
+
+    public OrdenCompra getOrden() {
+        return orden;
+    }
+
+    public void setOrden(OrdenCompra orden) {
+        this.orden = orden;
     }
 
 }

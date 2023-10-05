@@ -5,11 +5,13 @@ public class OrdenCompra {
     private String estado;
 
 
+    //-----------constructor------------------
     public OrdenCompra(Date fecha, String estado) {
         this.fecha = fecha;
         this.estado = estado;
     }
 
+    //-------getters and setters-----------
     public Date getFecha() {
         return fecha;
     }
@@ -30,6 +32,7 @@ public class OrdenCompra {
     public int calcIVA();
     public int calcPrecio();
     public int calcPeso();
+
 
 
 }
