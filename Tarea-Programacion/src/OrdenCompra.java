@@ -28,10 +28,18 @@ public class OrdenCompra {
         this.estado = estado;
     }
 
-    public int calcPrecioSinIVA( );
-    public int calcIVA();
-    public int calcPrecio();
-    public int calcPeso();
+    public int calcPrecioSinIVA( ){
+
+    }
+    public int calcIVA(){
+
+    }
+    public int calcPrecio(){
+
+    }
+    public int calcPeso(){
+
+    }
 
 
 
