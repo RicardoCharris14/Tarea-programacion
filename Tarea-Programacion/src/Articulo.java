@@ -4,13 +4,15 @@ public class Articulo {
     private String descripcion;
     private float precio;
 
-    public Articulo(float peso, String nombre, String descripcion, float precio) {
+    //-----constructor--------
+    public Articulo(String nombre,float precio, float peso, String descripcion) {
         this.peso = peso;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
     }
 
+    //-------------getters and setters------------
     public float getPeso() {
         return peso;
     }
@@ -43,3 +45,4 @@ public class Articulo {
         this.precio = precio;
     }
 }
+

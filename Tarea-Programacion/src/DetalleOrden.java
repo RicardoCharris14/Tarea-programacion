@@ -1,9 +1,13 @@
 public class DetalleOrden {
     private int cantidad;
+    private Articulo articulo;
 
-    public DetalleOrden(int cantidad) {
+    //------constructor---------
+    public DetalleOrden(int cantidad,Articulo articulo) {
         this.cantidad = cantidad;
+        this.articulo = articulo;
     }
+    //------getters and setters------
     public int getCantidad() {
         return cantidad;
     }
@@ -11,19 +15,25 @@ public class DetalleOrden {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-
-
-    public int calcPrecioSinIVA( ){
-
+    public Articulo getArticulo(){
+        return articulo;
     }
-    public int calcIVA(){
-
+    public void setArticulo(Articulo articulo){
+        this.articulo = articulo;
     }
-    public int calcPrecio(){
 
+
+    public float calcPrecioSinIVA(){
+        return (articulo.getPrecio()*100)/119;
     }
-    public int calcPeso(){
-
+    public float calcIVA(){
+        return (articulo.getPrecio()*19)/119;
+    }
+    public float calcPrecio(){
+        return articulo.getPrecio();
+    }
+    public float calcPeso(){
+        return cantidad*articulo.getPeso();
     }
 
 }
