@@ -6,12 +6,18 @@ public class Tarjeta extends Pago {
     private String numTransaccion;
 
 
-    public Tarjeta(float monto, Date fecha, String tipo, String numTransaccion) {
+    //------constructor----------
+    public Tarjeta(String tipo, String numTransaccion, float monto, Date fecha) {
         super(monto, fecha);
         this.tipo = tipo;
         this.numTransaccion = numTransaccion;
     }
-
+    public Tarjeta(String tipo, String numTransaccion, float monto, Date fecha, OrdenCompra orden) {
+        super(monto, fecha, orden);
+        this.tipo = tipo;
+        this.numTransaccion = numTransaccion;
+    }
+    //-----getters and setters----------
     public String getTipo() {
         return tipo;
     }
