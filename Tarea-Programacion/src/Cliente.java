@@ -11,9 +11,10 @@ public class Cliente {
         this.refDireccion = refDireccion;
         this.orden = orden;
     }
-    public Cliente(String nombre, String rut){
+    public Cliente(String nombre, String rut, Direccion refDireccion){
         this.nombre = nombre;
         this.rut = rut;
+        this.refDireccion = refDireccion;
     }
 
 

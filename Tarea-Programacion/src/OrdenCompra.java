@@ -2,9 +2,11 @@ import java.util.Date;
 import java.util.ArrayList;
 
 public class OrdenCompra {
+    private Cliente cliente;
     private Date fecha;
     private String estado;
-    private float  porPagar;
+    private float porPagar;
+    private DocTributario documentoTibutario;
     private ArrayList<DetalleOrden> listaCompras;
     private  ArrayList<Pago> pagos;
 
@@ -14,8 +16,6 @@ public class OrdenCompra {
         porPagar = 0;
 
     }
-
-    //-------getters and setters-----------
     public Date getFecha() {
         return fecha;
     }
@@ -31,13 +31,26 @@ public class OrdenCompra {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    public void añadirOrden(DetalleOrden orden){
+
+    public void setDocumentoTibutario(DocTributario documentoTibutario){
+        this.documentoTibutario = documentoTibutario;
+    }
+
+    public ArrayList<Pago> getPagos(){
+        return pagos;
+    }
+    public float getPorPagar(){
+        return porPagar;
+    }
+    public void setCliente(Cliente cliente){
+        this.cliente = cliente;
+    }
+    public void anadirOrden(DetalleOrden orden){
         listaCompras.add(orden);
         porPagar += orden.calcPrecio();
 
     }
-
-    public void añadirPago(Pago pago){
+    public void anadirPago(Pago pago){
         pagos.add(pago);
     }
 
