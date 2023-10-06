@@ -5,9 +5,6 @@ public class Cliente {
     private OrdenCompra orden;
 
 
-
-
-    //-----------------metodo constructor----------------
     public Cliente(String nombre, String rut, Direccion refDireccion, OrdenCompra orden) {
         this.nombre = nombre;
         this.rut = rut;
