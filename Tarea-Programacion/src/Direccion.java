@@ -1,12 +1,17 @@
+/**
+ * Direccion del cliente que efectua la compra y del Documento Tributario
+ *  @author Vicente
+ *  @author Ricardo
+ */
 public class Direccion {
     private String direccion;
 
-    //---------constructor--------------
+
     public Direccion(String direccion) {
         this.direccion = direccion;
     }
 
-    //-----------getters and setters-----------------
+
     public String getDireccion() {
         return direccion;
     }
@@ -15,5 +20,10 @@ public class Direccion {
         this.direccion = direccion;
     }
 
-
+    @Override
+    public String toString() {
+        return "Direccion{" +
+                "direccion='" + direccion + '\'' +
+                '}';
+    }
 }

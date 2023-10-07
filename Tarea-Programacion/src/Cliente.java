@@ -1,3 +1,8 @@
+/**
+ * Datos de un  usuario/cliente que efectua una compra
+ *  @author Vicente
+ *  @author Ricardo
+ */
 public class Cliente {
     private String nombre;
     private String rut;
@@ -54,6 +59,10 @@ public class Cliente {
         this.orden = orden;
     }
 
+    @Override
+    public String toString() {
+        return "Cliente: " + "nombre= " + nombre + ", rut= " + rut + ", dirección: " + refDireccion;
+    }
 }
 
 
