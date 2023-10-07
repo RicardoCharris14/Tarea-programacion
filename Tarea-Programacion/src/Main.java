@@ -57,6 +57,22 @@ public class Main {
 
 
 
-        
+        System.out.println("COMPRA NUMERO 3");
+        OrdenCompra compra3 = new OrdenCompra();
+        cliente2.setOrden(compra3);
+        compra3.setCliente(cliente2);
+        compra3.anadirOrden(zapatosFutbol,1);
+        System.out.println("Estado de la compra: " + compra3.getEstado() );
+        System.out.print(compra3.getCliente().getNombre()+" el valor de tu compra es de $"+ compra3.getPorPagar()+"\n");
+        Pago transferencia = new Transferencia(250000, new Date(),"Banco Santander", "6743867-7",compra3);
+        ((Transferencia)transferencia).verificarPago();
+        System.out.print(compra3.pagar(transferencia));
+        Pago montoFaltante = new Efectivo(50000, new Date(),compra3);
+        vuelto =((Efectivo)montoFaltante).calcDevolucion();
+        System.out.print(compra3.pagar(montoFaltante));
+        System.out.println("Tu vuelto es de $"+vuelto+" pesos.");
+        compra3.setDocumentoTributario(new Factura("0000812942","15.414.627-8", direccionTienda2, new Date() ));
+        System.out.println("Estado de la compra: " + compra3.getEstado()+"\n");
+        System.out.println(compra3.toString());
     }
 }
