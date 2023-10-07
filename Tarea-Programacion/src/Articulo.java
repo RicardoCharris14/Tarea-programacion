@@ -101,8 +101,8 @@ public class Articulo {
 
     @Override
     public String toString() {
-        return "Articulo:\n" + "peso = " + peso +"\nnombre = " + nombre +"\ndescripcion = " + descripcion +
-                "\nprecio=" + precio;
+        return "Articulo:\n" + "\nnombre = " + nombre +"peso = " + peso +"\nprecio=" + precio+
+                "\ndescripcion = " + descripcion;
     }
 }
 

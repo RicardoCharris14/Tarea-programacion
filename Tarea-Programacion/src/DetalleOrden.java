@@ -92,6 +92,6 @@ public class DetalleOrden {
     @Override
     public String toString() {
 
-        return "\narticulo = " + articulo.getNombre() + ", Cantidad de articulos = " + cantidad + "}";
+        return "\narticulo = " + articulo.getNombre() + ", Cantidad de articulos = " + cantidad;
     }
 }

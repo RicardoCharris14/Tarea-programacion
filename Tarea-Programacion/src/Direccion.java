@@ -22,8 +22,6 @@ public class Direccion {
 
     @Override
     public String toString() {
-        return "Direccion{" +
-                "direccion='" + direccion + '\'' +
-                '}';
+        return "Direccion= " + direccion;
     }
 }

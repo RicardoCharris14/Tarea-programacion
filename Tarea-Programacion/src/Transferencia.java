@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Date;
 /**
  * Metodo de pago con transferencia que contiene todos los datos para poder realizar una transferencia
@@ -64,15 +63,10 @@ public class Transferencia extends Pago{
      * En ese caso cambia el monto a  pagar a lo que falta
      */
     public void verificarPago(){
-        ArrayList<Pago> pagosTemp= orden.getPagos();
-        float pagoTotal=0;
-        for (int i=0; i<orden.getPagos().size(); i++){
-            pagoTotal += pagosTemp.get(i).getMonto();
+        if(getMonto() >= orden.getPorPagar()){
+            setMonto(orden.getPorPagar());
         }
-        pagoTotal += getMonto();
-        if(pagoTotal >= orden.getPorPagar()){
-            setMonto(orden.getPorPagar()-(pagoTotal-getMonto()));
-        }
+
     }
 
     /**

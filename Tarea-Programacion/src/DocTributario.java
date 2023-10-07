@@ -104,6 +104,6 @@ public abstract class DocTributario {
 
     @Override
     public String toString() {
-        return "DocTributario: " +"numero = " + numero + "\nrut='" + rut + "\nfecha=" + fecha;
+        return "numero = " + numero + " | rut= " + rut + " | fecha = " + fecha+" | Direccion tienda = "+ref1Direccion.getDireccion();
     }
 }

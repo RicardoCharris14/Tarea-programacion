@@ -21,7 +21,7 @@ public class Factura extends DocTributario {
      * @return retorna una descripcion de las varialbes que contiene la clase
      */
     public String toString(){
-        return super.toString();
+        return "Factura: "+super.toString();
     }
 
 

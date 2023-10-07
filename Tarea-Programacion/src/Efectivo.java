@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Date;
 /**
  * Metodo de pago con Efectivo con capacidad de dar vuelto
@@ -24,26 +23,19 @@ public class Efectivo extends Pago {
      * @return devuelve el vuelto
      */
     public float calcDevolucion(){
-        ArrayList<Pago> pagosTemp= orden.getPagos();
-        float pagoTotal=0;
-        for (int i=0; i<orden.getPagos().size(); i++){
-            pagoTotal += pagosTemp.get(i).getMonto();
-        }
-        pagoTotal += getMonto();
-        if(orden.getPorPagar()>=pagoTotal){
+        if (orden.getPorPagar() >= getMonto()) {
             return 0;
-        }
-        else{
-            return pagoTotal - orden.getPorPagar();
+        } else {
+            return getMonto() - orden.getPorPagar();
         }
     }
 
     /**
-     * Esta funcion deascribe la clase Transferencia
+     * Esta funcion describe la clase Efectivo
      * @return  devuelve una descripcion de las variables de la clase
      */
     @Override
     public String toString() {
-        return "Efectivo{" +super.toString() + " }";
+        return "Efectivo { " +super.toString() + " }";
     }
 }

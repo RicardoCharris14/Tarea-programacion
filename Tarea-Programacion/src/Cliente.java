@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Datos de un  usuario/cliente que efectua una compra
  *  @author Vicente
@@ -7,25 +9,15 @@ public class Cliente {
     private String nombre;
     private String rut;
     private Direccion refDireccion;
-    private OrdenCompra orden;
+    private ArrayList<OrdenCompra> orden;
 
 
-    public Cliente(String nombre, String rut, Direccion refDireccion, OrdenCompra orden) {
-        this.nombre = nombre;
-        this.rut = rut;
-        this.refDireccion = refDireccion;
-        this.orden = orden;
-    }
     public Cliente(String nombre, String rut, Direccion refDireccion){
         this.nombre = nombre;
         this.rut = rut;
         this.refDireccion = refDireccion;
+        orden = new ArrayList<OrdenCompra>();
     }
-
-
-
-
-    // -------------getters and setters------------
     public String getNombre() {
         return nombre;
     }
@@ -50,13 +42,8 @@ public class Cliente {
     public void setRefDireccion(Direccion refDireccion) {
         this.refDireccion = refDireccion;
     }
-
-    public OrdenCompra getOrden() {
-        return orden;
-    }
-
     public void setOrden(OrdenCompra orden) {
-        this.orden = orden;
+        this.orden.add(orden);
     }
 
     @Override
