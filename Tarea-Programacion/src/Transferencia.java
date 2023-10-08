@@ -57,6 +57,21 @@ public class Transferencia extends Pago{
     public void setNumCuenta(String numCuenta) {
         this.numCuenta = numCuenta;
     }
+    /**
+     * getter de orden
+     * @return devuelve la variable orden
+     */
+    public OrdenCompra getOrden() {
+        return orden;
+    }
+
+    /**
+     * setter de orden
+     * @param orden se ingresa una OrdenCompra para ser asignada
+     */
+    public void setOrden(OrdenCompra orden) {
+        this.orden = orden;
+    }
 
     /**
      * Esta funcion verficaba si el monto a pagar era mayor que el precio total

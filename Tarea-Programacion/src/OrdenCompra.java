@@ -27,7 +27,20 @@ public class OrdenCompra {
         this.documentoTributario = null;
         System.out.println(this.estado);
     }
-
+    /**
+     * getter de Cliente
+     * @return devuelve la variable Cliente
+     */
+    public Cliente getCliente(){
+        return cliente;
+    }
+    /**
+     * setter de puntero a Cliente
+     * @param cliente establece la variable cliente
+     */
+    public void setCliente(Cliente cliente){
+        this.cliente = cliente;
+    }
     /**
      * getter de fecha
      * @return devuelve  la variable fecha
@@ -59,22 +72,6 @@ public class OrdenCompra {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-
-    /**
-     * setter de puntero a DocTributario
-     * @param documentoTributario establece la variable puntero a DocTributario
-     */
-    public void setDocumentoTributario(DocTributario documentoTributario){
-        this.documentoTributario = documentoTributario;
-    }
-    /**
-     * getter de Cliente
-     * @return devuelve la variable Cliente
-     */
-    public Cliente getCliente(){
-        return cliente;
-    }
-
     /**
      * getter de porPagar
      * @return devuelve la variaable porPagar
@@ -84,13 +81,35 @@ public class OrdenCompra {
     }
 
     /**
-     * setter de puntero a Cliente
-     * @param cliente establece la variable cliente
+     * getter de documentoTributario
+     * @return devuelve la variable documentoTributario
      */
-    public void setCliente(Cliente cliente){
-        this.cliente = cliente;
+    public DocTributario getDocumentoTributario(){
+        return documentoTributario;
+    }
+    /**
+     * setter de puntero a DocTributario
+     * @param documentoTributario establece la variable puntero a DocTributario
+     */
+    public void setDocumentoTributario(DocTributario documentoTributario){
+        this.documentoTributario = documentoTributario;
     }
 
+    /**
+     * getter de la variable listaCompras
+     * @return devuelve la variable lista compras
+     */
+    public ArrayList<DetalleOrden> getListaCompras(){
+        return listaCompras;
+    }
+
+    /**
+     * getter del Arraylist pagos
+     * @return devuelve ArrayList pagos
+     */
+    public ArrayList<Pago> getPagos(){
+        return pagos;
+    }
     /**
      * Esta crea un objeto DetalleOrden, añade numArticulos articulos a DetalleOrden y guarda
      * la orden en el arreglo listaCompras
@@ -187,13 +206,19 @@ public class OrdenCompra {
      */
     @Override
     public String toString() {
+        String articulos ="";
+        for(DetalleOrden listacompras : listaCompras){
+            articulos+=listacompras.getCantidad()+"   "+listacompras.getArticulo().getNombre() + "     "
+                    +listacompras.calcPrecio()+"\n";
+        }
         String descripcion = "Detalle de la compra:\n\n";
-        descripcion += "cliente = " + cliente.getNombre() + "\nfecha =" + fecha + "\nestado = " + estado
+        descripcion += "cliente = " + cliente.getNombre() +" | Rut cliente = "+cliente.getRut()+ "\nFecha =" + fecha + "\nEstado = " + estado
         +"\nLista de articulos: ";
         for (int i=0;i< listaCompras.size();i++){
             descripcion += listaCompras.get(i).toString();
         }
-        descripcion += "\nporPagar = " + porPagar +"\n"+documentoTributario.toString()+"\n";
+        descripcion += "\n\n"+documentoTributario.toString()+"\n"+articulos+"Monto Total = "+calcPrecio()+"\nMonto sin IVA = "
+                +calcPrecioSinIVA()+"\nIVA = "+calcIVA()+"\n";
 
         return descripcion;
     }

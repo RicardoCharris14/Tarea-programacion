@@ -19,7 +19,7 @@ public class Boleta extends DocTributario {
 
     /**
      * Esta funcion describe la clase boleta
-     * @return retorna una descripcion de las varialbes que contiene la clase
+     * @return retorna una String con las propiedades de la clase
      */
     public String toString(){
         return "Boleta: "+super.toString();

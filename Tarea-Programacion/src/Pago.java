@@ -54,7 +54,21 @@ public abstract class Pago {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+    /**
+     * getter de orden
+     * @return devuelve la variable orden
+     */
+    public OrdenCompra getOrden() {
+        return orden;
+    }
 
+    /**
+     * setter de orden
+     * @param orden se ingresa una OrdenCompra para ser asignada
+     */
+    public void setOrden(OrdenCompra orden) {
+        this.orden = orden;
+    }
     /**
      * Esta funcion deascribe la clase Pago
      * @return devuelve una descripcion de las variables de la clase
